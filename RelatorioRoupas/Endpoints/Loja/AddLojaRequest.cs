@@ -1,5 +1,5 @@
 ﻿namespace RelatorioRoupas.Endpoints.Loja
 {
-    public record AddLojaRequest(string nome, int idProduto);
+    public record AddLojaRequest(string nome, string cnpj);
 
 }

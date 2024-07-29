@@ -2,8 +2,8 @@
 {
     public class Marca
     {
-        public int IdMarca { get; set; }
+        public int IdMarca { get; init; }
         public string Nome { get; set; }
-        public int IdProduto { get; set; } //Fk
+        public List<Produto> Produtos { get; set; }
     }
 }

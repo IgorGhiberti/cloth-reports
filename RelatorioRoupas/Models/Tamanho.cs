@@ -2,8 +2,7 @@
 {
     public class Tamanho
     {
-        public int IdTamanho { get; set; }
+        public int IdTamanho { get; init; }
         public string Nome { get; set; }
-        public int IdProduto { get; set; } //Fk
     }
 }

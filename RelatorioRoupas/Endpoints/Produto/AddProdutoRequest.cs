@@ -1,5 +1,5 @@
 ﻿namespace RelatorioRoupas.Endpoints.Produto
 {
-    public record AddProdutoRequest (int codigoProduto, string nomeProduto, float valorUnitario, int idLoja);
+    public record AddProdutoRequest (string nome, float valor_unitario, int idcategoria, int idtamanho, int idmarca);
 
 }

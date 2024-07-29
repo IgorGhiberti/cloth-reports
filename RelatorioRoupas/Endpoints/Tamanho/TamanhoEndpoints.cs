@@ -62,7 +62,7 @@ namespace RelatorioRoupas.Endpoints.Tamanho
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = "SELECT * FROM TAMANHO";
+                    var sql = "SELECT NOME FROM TAMANHO";
                     var listagemTamanhos = await dbConnection.QueryAsync<Models.Tamanho>(sql);
                     return Results.Ok(listagemTamanhos);
                 }

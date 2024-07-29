@@ -14,9 +14,9 @@ namespace RelatorioRoupas.Endpoints.Loja
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"INSERT INTO LOJA (NOME) VALUES (@NOME)";
+                    var sql = @"INSERT INTO LOJA (NOME, CNPJ) VALUES (@NOME, @CNPJ)";
                     {
-                        var novaLoja = new { Nome = request.nome };
+                        var novaLoja = new { Nome = request.nome, CNPJ = request.cnpj };
                         var rowsAffected = await dbConnection.ExecuteAsync(sql, novaLoja);
                         if (rowsAffected > 0)
                         {
@@ -35,9 +35,9 @@ namespace RelatorioRoupas.Endpoints.Loja
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"UPDATE LOJA SET NOME = @NOME";
+                    var sql = @"UPDATE LOJA SET NOME = @NOME, CNPJ = @CNPJ WHERE IDLOJA = @ID";
                     {
-                        var lojaEditada = new { Nome = update.nome, Id = id };
+                        var lojaEditada = new { Nome = update.nome, CNPJ = update.cnpj, Id = id };
                         var rowsAffected = await dbConnection.ExecuteAsync(sql, lojaEditada);
                         if (rowsAffected > 0)
                         {
@@ -77,7 +77,7 @@ namespace RelatorioRoupas.Endpoints.Loja
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"SELECT * FROM LOJA";
+                    var sql = @"SELECT NOME, CNPJ FROM LOJA";
                     {
                         var listagemLoja = await dbConnection.QueryAsync<Models.Loja>(sql);
                         return Results.Ok(listagemLoja);

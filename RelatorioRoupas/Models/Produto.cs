@@ -2,15 +2,15 @@
 {
     public class Produto
     {
-        public int IdProduto { get; set; }
-        public int CodigoProduto { get; set; }
+        public int IdProduto { get; init; }
         public string NomeProduto { get; set; }
         public float ValorUnitario { get; set; }
-        public Marca Marca { get; set; }
-        public Tipo Tipo { get; set; }
-        public Tamanho Tamanho { get; set; }
-        public int IdLoja { get; set; } //Fk
-
+        public string NomeMarca { get; set; }
+        public string NomeCategoria { get; set; }
+        public string NomeTamanho { get; set; }
+        public int idCategoria { get; set; }
+        public int idMarca { get; set; }
+        public int idTamanho { get; set; }
 
     }
 }

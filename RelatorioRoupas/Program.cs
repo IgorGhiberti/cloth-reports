@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Connections;
+using RelatorioRoupas.Categoria;
 using RelatorioRoupas.Data;
+using RelatorioRoupas.Endpoints.GrupoVenda;
 using RelatorioRoupas.Endpoints.Loja;
 using RelatorioRoupas.Endpoints.Marca;
 using RelatorioRoupas.Endpoints.Produto;
+using RelatorioRoupas.Endpoints.ProdutosLoja;
 using RelatorioRoupas.Endpoints.Tamanho;
+using RelatorioRoupas.Endpoints.Venda;
 using RelatorioRoupas.Models;
-using RelatorioRoupas.Tipo_de_produto;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -31,9 +34,12 @@ app.UseHttpsRedirection();
 
 app.AddEndpointsMarcas();
 app.AddTamanhoEndpoints();
-app.AddTipoEndpoints();
+app.AddCategoriaEndpoints();
 app.AddLojaEndpoints();
 app.AddProdutoEndpoints();
+app.AddProdutoLojaEndpoints();
+app.AddGrupoVendaEndpoints();
+app.AddVendaEndpoints();
 
 app.Run();
 

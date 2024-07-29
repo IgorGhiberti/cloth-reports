@@ -32,7 +32,7 @@ namespace RelatorioRoupas.Endpoints.Marca
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = "SELECT * FROM MARCA";
+                    var sql = "SELECT NOME FROM MARCA";
                     var marcas = await dbConnection.QueryAsync<Models.Marca>(sql);
 
                     return Results.Ok(marcas);

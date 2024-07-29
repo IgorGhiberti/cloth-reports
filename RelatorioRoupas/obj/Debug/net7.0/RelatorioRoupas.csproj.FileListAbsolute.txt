@@ -33,3 +33,4 @@ D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.pdb
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.genruntimeconfig.cache
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\ref\RelatorioRoupas.dll
+D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.sourcelink.json

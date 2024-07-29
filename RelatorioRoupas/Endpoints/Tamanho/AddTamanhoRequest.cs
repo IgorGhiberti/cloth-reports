@@ -1,5 +1,5 @@
 ﻿namespace RelatorioRoupas.Endpoints.Tamanho
 {
-    public record AddTamanhoRequest(string nome, int idProduto);
+    public record AddTamanhoRequest(string nome);
 
 }
