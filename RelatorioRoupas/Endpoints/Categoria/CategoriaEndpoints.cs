@@ -50,11 +50,31 @@ namespace RelatorioRoupas.Categoria
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"SELECT NOME FROM CATEGORIA";
+                    var sql = @"SELECT IDCATEGORIA, NOME FROM CATEGORIA";
                     {
-                        var listagemCategorias = await dbConnection.QueryAsync<Models.Categoria>(sql);
+                        var listagemCategorias = await dbConnection.QueryAsync(sql);
 
                         return Results.Ok(listagemCategorias);
+                    }
+                }
+            });
+
+            //Listar categoria por id
+            categoriaEndpoints.MapGet("{id}", async (DbContext connection, int id) =>
+            {
+                using (var dbConnection = connection.CreateConnection())
+                {
+                    var sql = @"SELECT IDCATEGORIA, NOME FROM CATEGORIA WHERE IDCATEGORIA = @ID";
+                    {
+                        var categoriaId = new { Id = id };
+                        var categoria = await dbConnection.QueryAsync(sql, categoriaId);
+
+                        if(categoria != null) 
+                        { 
+                            return Results.Ok(categoria);
+                        }
+
+                        return Results.NotFound();
                     }
                 }
             });
