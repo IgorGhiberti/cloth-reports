@@ -2,8 +2,7 @@
 {
     public class Categoria
     {
-        public int IdTipo { get; init; }
+        public int IdCategoria { get; init; }
         public string Nome { get; set; }
-        public List<Produto> Produtos { get; }
     }
 }
