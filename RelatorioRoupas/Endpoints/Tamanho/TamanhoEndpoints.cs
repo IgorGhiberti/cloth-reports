@@ -62,9 +62,29 @@ namespace RelatorioRoupas.Endpoints.Tamanho
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = "SELECT NOME FROM TAMANHO";
-                    var listagemTamanhos = await dbConnection.QueryAsync<Models.Tamanho>(sql);
+                    var sql = "SELECT IDTAMANHO, NOME FROM TAMANHO";
+                    var listagemTamanhos = await dbConnection.QueryAsync(sql);
                     return Results.Ok(listagemTamanhos);
+                }
+            });
+
+            //Listar tamanho por id
+            endpointsTamanho.MapGet("{id}", async (DbContext connection, int id) =>
+            {
+                using (var dbConnection = connection.CreateConnection())
+                {
+                    var sql = "SELECT IDTAMANHO, NOME FROM TAMANHO WHERE IDTAMANHO = @ID";
+                    var tamanhoExibido = new {Id = id };
+                    var tamanho = await dbConnection.QuerySingleOrDefaultAsync(sql, tamanhoExibido);
+
+                    if (tamanho != null)
+                    {
+                        return Results.Ok(tamanho);
+                    }
+                    else
+                    {
+                        return Results.NotFound();
+                    }
                 }
             });
         }

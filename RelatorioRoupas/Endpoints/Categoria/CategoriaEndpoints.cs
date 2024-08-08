@@ -67,7 +67,7 @@ namespace RelatorioRoupas.Categoria
                     var sql = @"SELECT IDCATEGORIA, NOME FROM CATEGORIA WHERE IDCATEGORIA = @ID";
                     {
                         var categoriaId = new { Id = id };
-                        var categoria = await dbConnection.QueryAsync(sql, categoriaId);
+                        var categoria = await dbConnection.QuerySingleOrDefaultAsync(sql, categoriaId);
 
                         if(categoria != null) 
                         { 
