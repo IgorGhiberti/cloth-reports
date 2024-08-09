@@ -77,10 +77,30 @@ namespace RelatorioRoupas.Endpoints.Loja
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"SELECT NOME, CNPJ FROM LOJA";
+                    var sql = @"SELECT IDLOJA, NOME, CNPJ FROM LOJA";
                     {
-                        var listagemLoja = await dbConnection.QueryAsync<Models.Loja>(sql);
+                        var listagemLoja = await dbConnection.QueryAsync(sql);
                         return Results.Ok(listagemLoja);
+                    }
+                }
+            });
+
+            //Listar loja
+            lojaEndpoints.MapGet("{id}", async (DbContext connection, int id) =>
+            {
+                using (var dbConnection = connection.CreateConnection())
+                {
+                    var sql = @"SELECT IDLOJA, NOME, CNPJ FROM LOJA WHERE IDLOJA = @ID";
+                    {
+                        var idLoja = new { Id = id };
+                        var listagemLoja = await dbConnection.QuerySingleOrDefaultAsync(sql, idLoja);
+
+                        if (listagemLoja != null)
+                        {
+                            return Results.Ok(listagemLoja);
+                        }
+
+                        return Results.NotFound();
                     }
                 }
             });

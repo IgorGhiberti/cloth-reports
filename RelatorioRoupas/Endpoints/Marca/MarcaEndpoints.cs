@@ -32,10 +32,28 @@ namespace RelatorioRoupas.Endpoints.Marca
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = "SELECT NOME FROM MARCA";
-                    var marcas = await dbConnection.QueryAsync<Models.Marca>(sql);
+                    var sql = "SELECT IDMARCA, NOME FROM MARCA";
+                    var marcas = await dbConnection.QueryAsync(sql);
 
                     return Results.Ok(marcas);
+                }
+            });
+
+            //Listar marca por id
+            endpointsMarcas.MapGet("{id}", async (DbContext connection, int id) =>
+            {
+                using (var dbConnection = connection.CreateConnection())
+                {
+                    var sql = @"SELECT IDMARCA, NOME FROM MARCA WHERE IDMARCA = @ID";
+                    var idMarca = new { Id = id };
+                    var marcaSelecionada = await dbConnection.QuerySingleOrDefaultAsync(sql, idMarca);
+
+                    if (marcaSelecionada != null)
+                    {
+                        return Results.Ok(marcaSelecionada);
+                    }
+
+                    return Results.NotFound();
                 }
             });
 
