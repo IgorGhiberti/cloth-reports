@@ -5,6 +5,7 @@
         public int idProdutoLoja { get; init; }
         public int idProduto { get; set; }
         public int idLoja { get; set; }
-        public string vendido { get; set; }
+        public bool vendido { get; set; }
+
     }
 }

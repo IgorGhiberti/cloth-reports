@@ -27,10 +27,10 @@ D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.RelatorioRoupas.props
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\staticwebassets.pack.json
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\scopedcss\bundle\RelatorioRoupas.styles.css
-D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.csproj.CopyComplete
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.dll
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\refint\RelatorioRoupas.dll
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.pdb
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.genruntimeconfig.cache
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\ref\RelatorioRoupas.dll
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.sourcelink.json
+D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\Relatori.47B27ACB.Up2Date

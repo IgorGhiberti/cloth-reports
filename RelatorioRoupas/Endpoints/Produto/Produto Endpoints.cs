@@ -11,7 +11,7 @@ namespace RelatorioRoupas.Endpoints.Produto
             var produtoEndpoints = app.MapGroup("produto");
 
             //Criar novo produto
-            produtoEndpoints.MapPost("/marca/{idmarca}/tamanho/{idtamanho}/categoria/{idcategoria}", async (AddProdutoRequest request, DbContext connection) => 
+            produtoEndpoints.MapPost("", async (AddProdutoRequest request, DbContext connection) => 
             { 
                 using (var dbConnection = connection.CreateConnection())
                 {
@@ -40,16 +40,16 @@ namespace RelatorioRoupas.Endpoints.Produto
             });
 
             //Editar um produto
-            produtoEndpoints.MapPut("/marca/{idmarca}/tamanho/{idtamanho}/categoria/{idcategoria}/{id}", async (UpdateProdutoRequest request, DbContext connection, int id) => 
+            produtoEndpoints.MapPut("{id}", async (UpdateProdutoRequest request, DbContext connection, int id) => 
             { 
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"UPDATE PRODUTO SET NOME = @NOME, VALORUNITARIO = @VALORUNITARIO
-                        IDCATEGORIA = @IDCATEGORIA, IDMARCA = @IDMARCA, IDTAMANHO = @IDTAMANHO";
+                    var sql = @"UPDATE PRODUTO SET NOME = @NOME, VALOR_UNITARIO = @VALOR_UNITARIO,
+                        IDCATEGORIA = @IDCATEGORIA, IDMARCA = @IDMARCA, IDTAMANHO = @IDTAMANHO WHERE IDPRODUTO = @ID";
                     var produtoEditado = new
                     {
                         Nome = request.nome,
-                        VALORUNITARIO = request.valorunitario,
+                        VALOR_UNITARIO = request.valor_unitario,
                         IDCATEGORIA = request.idcategoria,
                         IDMARCA = request.idmarca,
                         IDTAMANHO = request.idtamanho,
@@ -75,6 +75,7 @@ namespace RelatorioRoupas.Endpoints.Produto
                 using (var dbConnection = connection.CreateConnection())
                 {
                     var sql = @"select 
+                                    prd.idproduto as IdProduto,
 	                                prd.nome as NomeProduto, 
 	                                valor_unitario as ValorUnitario, 
 	                                mrc.nome as NomeMarca, 
@@ -102,10 +103,14 @@ namespace RelatorioRoupas.Endpoints.Produto
                 {
                     var idProduto = new { Id = id };
                     var sql = @"select 
-	                                prd.nome as NomeProduto, 
-	                                valor_unitario as ValorUnitario, 
-	                                mrc.nome as NomeMarca, 
+                                    prd.idproduto as IdProduto,
+	                                prd.nome as Nome, 
+	                                valor_unitario as Valor_Unitario,
+                                    mrc.idmarca as IdMarca,
+	                                mrc.nome as NomeMarca,
+                                    ctr.idcategoria as IdCategoria,
 	                                ctr.nome as NomeCategoria, 
+                                    tam.idtamanho as IdTamanho,
 	                                tam.nome as NomeTamanho
                                 from 
 	                                produto prd
@@ -116,7 +121,7 @@ namespace RelatorioRoupas.Endpoints.Produto
                                 left outer join 
 	                                tamanho tam on prd.idtamanho = tam.idtamanho
                                 where idproduto = @id";
-                    var produto = await dbConnection.QueryAsync(sql, idProduto);
+                    var produto = await dbConnection.QuerySingleOrDefaultAsync(sql, idProduto);
                     return Results.Ok(produto);
                 }
             });

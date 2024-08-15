@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projetos\\Relatorios-Loja-Cida\\RelatorioRoupas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|d:\\projetos\\relatorios-loja-cida\\relatorioroupas\\relatorioroupas\\endpoints\\produtosloja\\produtolojaendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|solutionrelative:relatorioroupas\\endpoints\\produtosloja\\produtolojaendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|d:\\projetos\\relatorios-loja-cida\\relatorioroupas\\relatorioroupas\\endpoints\\produto\\produto endpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|solutionrelative:relatorioroupas\\endpoints\\produto\\produto endpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|d:\\projetos\\relatorios-loja-cida\\relatorioroupas\\relatorioroupas\\endpoints\\produtosloja\\addprodutolojarequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|solutionrelative:relatorioroupas\\endpoints\\produtosloja\\addprodutolojarequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|d:\\projetos\\relatorios-loja-cida\\relatorioroupas\\relatorioroupas\\models\\produtos_loja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|solutionrelative:relatorioroupas\\models\\produtos_loja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Produtos_Loja.cs",
+              "DocumentMoniker": "D:\\Projetos\\Relatorios-Loja-Cida\\RelatorioRoupas\\RelatorioRoupas\\Models\\Produtos_Loja.cs",
+              "RelativeDocumentMoniker": "RelatorioRoupas\\Models\\Produtos_Loja.cs",
+              "ToolTip": "D:\\Projetos\\Relatorios-Loja-Cida\\RelatorioRoupas\\RelatorioRoupas\\Models\\Produtos_Loja.cs",
+              "RelativeToolTip": "RelatorioRoupas\\Models\\Produtos_Loja.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T23:22:10.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddProdutoLojaRequest.cs",
+              "DocumentMoniker": "D:\\Projetos\\Relatorios-Loja-Cida\\RelatorioRoupas\\RelatorioRoupas\\Endpoints\\ProdutosLoja\\AddProdutoLojaRequest.cs",
+              "RelativeDocumentMoniker": "RelatorioRoupas\\Endpoints\\ProdutosLoja\\AddProdutoLojaRequest.cs",
+              "ToolTip": "D:\\Projetos\\Relatorios-Loja-Cida\\RelatorioRoupas\\RelatorioRoupas\\Endpoints\\ProdutosLoja\\AddProdutoLojaRequest.cs",
+              "RelativeToolTip": "RelatorioRoupas\\Endpoints\\ProdutosLoja\\AddProdutoLojaRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T22:47:03.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProdutoLojaEndpoints.cs",
+              "DocumentMoniker": "D:\\Projetos\\Relatorios-Loja-Cida\\RelatorioRoupas\\RelatorioRoupas\\Endpoints\\ProdutosLoja\\ProdutoLojaEndpoints.cs",
+              "RelativeDocumentMoniker": "RelatorioRoupas\\Endpoints\\ProdutosLoja\\ProdutoLojaEndpoints.cs",
+              "ToolTip": "D:\\Projetos\\Relatorios-Loja-Cida\\RelatorioRoupas\\RelatorioRoupas\\Endpoints\\ProdutosLoja\\ProdutoLojaEndpoints.cs",
+              "RelativeToolTip": "RelatorioRoupas\\Endpoints\\ProdutosLoja\\ProdutoLojaEndpoints.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAA4wCsAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T23:58:04.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Produto Endpoints.cs",
+              "DocumentMoniker": "D:\\Projetos\\Relatorios-Loja-Cida\\RelatorioRoupas\\RelatorioRoupas\\Endpoints\\Produto\\Produto Endpoints.cs",
+              "RelativeDocumentMoniker": "RelatorioRoupas\\Endpoints\\Produto\\Produto Endpoints.cs",
+              "ToolTip": "D:\\Projetos\\Relatorios-Loja-Cida\\RelatorioRoupas\\RelatorioRoupas\\Endpoints\\Produto\\Produto Endpoints.cs",
+              "RelativeToolTip": "RelatorioRoupas\\Endpoints\\Produto\\Produto Endpoints.cs",
+              "ViewState": "AQIAAHYAAAAAAAAAAAA4wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T21:06:22.769Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
