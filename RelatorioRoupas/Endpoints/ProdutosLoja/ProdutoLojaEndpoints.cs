@@ -14,44 +14,63 @@ namespace RelatorioRoupas.Endpoints.ProdutosLoja
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"insert into produtos_loja (idproduto, idloja, vendido) 
-                                values (@idproduto, @idloja, false);";
+                    var produto = @"SELECT * FROM PRODUTOS_LOJA WHERE IDPRODUTO = @IDPRODUTO AND IDLOJA = @IDLOJA";
 
-                    var novoProdutoLoja = new {
-                        IdProduto = request.idproduto, 
-                        IdLoja = idloja
-                    };
+                    var produtoLojaSelecionado = await dbConnection.QueryFirstOrDefaultAsync<Models.Produtos_Loja>(produto, new { IDPRODUTO = request.idproduto, IDLOJA = idloja }); 
 
-                    var rowsAffected = await dbConnection.ExecuteAsync(sql, novoProdutoLoja);
-
-                    if(rowsAffected > 0)
+                    if (produtoLojaSelecionado == null) 
                     {
-                        return Results.Ok(rowsAffected);
+                        var sql = @"insert into produtos_loja (idproduto, idloja, quantidade_produto) 
+                                values (@idproduto, @idloja, @quantidade_produto);";
+
+                        var novoProdutoLoja = new
+                        {
+                            IdProduto = request.idproduto,
+                            IdLoja = idloja,
+                            Quantidade_produto = request.quantidade_produto
+                        };
+
+                        var rowsAffected = await dbConnection.ExecuteAsync(sql, novoProdutoLoja);
+
+                        if (rowsAffected > 0)
+                        {
+                            return Results.Ok(rowsAffected);
+                        }
+
+                        return Results.NotFound();
                     }
 
-                    return Results.NotFound();
+                    return Results.BadRequest("Este produto já está nesta loja");
+                    
                 }
             });
 
-            //Listar os produtos pela loja associada que estão vendidos
-            produtoLojaEndpoints.MapGet("produtoLoja/loja/{idloja}/vendido", async (DbContext connection, int idloja) =>
+            //Listar os produtos pela loja
+            produtoLojaEndpoints.MapGet("produtoLoja/loja/{idloja}", async (DbContext connection, int idloja) =>
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"SELECT
-	                                PRD.*,
-                                    COUNT(PRD_LJ.IDPRODUTO) AS QUANTIDADE,
-                                    PRD_LJ.VENDIDO AS VENDIDO
-                                FROM
-	                                PRODUTOS_LOJA PRD_LJ
-                                LEFT OUTER JOIN
-	                                PRODUTO PRD ON PRD_LJ.IDPRODUTO = PRD.IDPRODUTO
-                                LEFT OUTER JOIN
-	                                LOJA LJ ON PRD_LJ.IDLOJA = LJ.IDLOJA
-                                WHERE PRD_LJ.IDLOJA = @IDLOJA AND PRD_LJ.VENDIDO = TRUE
-                                GROUP BY 
-                                    PRD.IDPRODUTO, PRD_LJ.VENDIDO";
-                 
+                    var sql = @"select
+	                                prd.idproduto,
+	                                prd.nome,
+	                                prd.valor_unitario,
+	                                mc.nome as Marca,
+	                                tm.nome as Tamanho,
+	                                ct.nome as Categoria,
+	                                prd_lj.quantidade_produto as Quantidade_produto,
+	                                prd_lj.idprodutoloja
+                                from
+	                                produtos_loja prd_lj
+                                left outer join
+                                    produto prd on prd_lj.idproduto = prd.idproduto
+                                left outer join
+                                    marca mc on prd.idmarca = mc.idmarca
+                                left outer join
+                                    tamanho tm on prd.idtamanho = tm.idtamanho
+                                left outer join
+                                    categoria ct on prd.idcategoria = ct.idcategoria
+                                where prd_lj.idloja = @idloja";
+
                     var produtosPorLoja = await dbConnection.QueryAsync(sql, new {  IDLOJA = idloja });
 
                     if (produtosPorLoja.Count() > 0)
@@ -64,72 +83,36 @@ namespace RelatorioRoupas.Endpoints.ProdutosLoja
                 }
             });
 
-            //Listar os produtos pela loja associada que não estão vendidos
-            produtoLojaEndpoints.MapGet("produtoLoja/loja/{idloja}/nao-vendido", async (DbContext connection, int idloja) =>
+            //Aumenta a quantidade
+            produtoLojaEndpoints.MapPut("{id}/aumentar", async (DbContext connection, int id) =>
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"SELECT
-	                                PRD.*,
-                                    COUNT(PRD_LJ.IDPRODUTO) AS QUANTIDADE,
-                                    PRD_LJ.VENDIDO AS VENDIDO
-                                FROM
-	                                PRODUTOS_LOJA PRD_LJ
-                                LEFT OUTER JOIN
-	                                PRODUTO PRD ON PRD_LJ.IDPRODUTO = PRD.IDPRODUTO
-                                LEFT OUTER JOIN
-	                                LOJA LJ ON PRD_LJ.IDLOJA = LJ.IDLOJA
-                                WHERE PRD_LJ.IDLOJA = @IDLOJA AND PRD_LJ.VENDIDO = FALSE
-                                GROUP BY PRD.IDPRODUTO, PRD_LJ.VENDIDO";
+                    var sql = @"UPDATE PRODUTOS_LOJA SET QUANTIDADE_PRODUTO = QUANTIDADE_PRODUTO + 1 WHERE IDPRODUTOLOJA = @ID";
 
-                    var produtosPorLoja = await dbConnection.QueryAsync(sql, new { IDLOJA = idloja });
+                    var rowsAffected = await dbConnection.ExecuteAsync(sql, new {Id = id});
 
-                    if (produtosPorLoja.Count() > 0)
-                    {
-                        return Results.Ok(produtosPorLoja);
-                    }
-
-                    return Results.NotFound();
-
-                }
-            });
-
-            //Edita de vendido para não vendido
-            produtoLojaEndpoints.MapPut("{id}/nao-vendido", async (DbContext connection, int id) =>
-            {
-                using (var dbConnection = connection.CreateConnection())
-                {
-                    var sql = @"UPDATE PRODUTOS_LOJA SET VENDIDO = FALSE WHERE IDPRODUTOLOJA = @ID";
-
-                    var statusAlterado = new { Id = id };
-
-                    var rowsAffected = await dbConnection.ExecuteAsync(sql, statusAlterado);
-
-                    if(rowsAffected > 0)
-                    {
-                        return Results.Ok(rowsAffected);
-                    }
-
-                    return Results.NotFound();
                     
+                    if (rowsAffected > 0)
+                        return Results.Ok(rowsAffected);
+
+                    return Results.NotFound();
+
                 }
             });
 
-            //Edita de não vendido para vendido
-            produtoLojaEndpoints.MapPut("{id}/vendido", async (DbContext connection, int id) =>
+            //Diminui a quantidade
+            produtoLojaEndpoints.MapPut("{id}/diminuir", async (DbContext connection, int id) =>
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"UPDATE PRODUTOS_LOJA SET VENDIDO = TRUE WHERE IDPRODUTOLOJA = @ID";
+                    var sql = @"UPDATE PRODUTOS_LOJA SET QUANTIDADE_PRODUTO = QUANTIDADE_PRODUTO - 1 WHERE IDPRODUTOLOJA = @ID";
 
-                    var statusAlterado = new { Id = id };
+                    var rowsAffected = await dbConnection.ExecuteAsync(sql, new { Id = id });
 
-                    var rowsAffected = await dbConnection.ExecuteAsync(sql, statusAlterado);
 
                     if (rowsAffected > 0)
-                    {
                         return Results.Ok(rowsAffected);
-                    }
 
                     return Results.NotFound();
 
