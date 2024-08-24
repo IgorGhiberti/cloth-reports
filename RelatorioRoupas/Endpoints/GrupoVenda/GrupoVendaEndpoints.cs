@@ -131,6 +131,76 @@ namespace RelatorioRoupas.Endpoints.GrupoVenda
                 }
             });
 
+            //Filtro de data
+            gp_vendaEndpoint.MapGet("/filtro-data", async (DbContext connection, DateTime data_inicio, DateTime data_fim) =>
+            {
+                using (var dbConnection = connection.CreateConnection())
+                {
+                    var sql = @"SELECT
+	                                PRD.NOME AS PRODUTO,
+	                                PRD.VALOR_UNITARIO AS VALOR_UNITARIO,
+	                                GV.DATA_VENDA AS DATA_VENDA,
+	                                PRD_LJ.IDPRODUTOLOJA,
+	                                LJ.NOME AS LOJA,
+	                                GV.QUANTIDADE_VENDIDO AS QUANTIDADE_VENDIDO,
+	                                GV.IDGRUPOVENDA
+                                FROM 
+	                                GRUPO_VENDA GV
+                                LEFT OUTER JOIN
+	                                PRODUTOS_LOJA PRD_LJ ON GV.IDPRODUTOLOJA = PRD_LJ.IDPRODUTOLOJA
+                                LEFT OUTER JOIN
+	                                PRODUTO PRD ON PRD_LJ.IDPRODUTO = PRD.IDPRODUTO
+                                LEFT OUTER JOIN
+	                                LOJA LJ ON PRD_LJ.IDLOJA = LJ.IDLOJA
+                                WHERE DATA_VENDA BETWEEN @DATA_INICIO AND @DATA_FIM";
+
+                    var listagemVenda = await dbConnection.QueryAsync(sql, new { Data_Inicio = data_inicio, Data_Fim = data_fim });
+
+                    if (listagemVenda != null)
+                        return Results.Ok(listagemVenda);
+
+                    return Results.NotFound();
+                }
+            });
+
+            //Traz os produtos vendidos de determinada loja
+            gp_vendaEndpoint.MapGet("/produtos-vendidos/{idloja}", async (DbContext connection ,int idloja) =>
+            {
+                using (var dbConnection = connection.CreateConnection())
+                {
+                    var sql = @"select
+	                                prd.nome,
+	                                prd.valor_unitario,
+	                                mc.nome as Marca,
+	                                tm.nome as Tamanho,
+	                                ct.nome as Categoria,
+	                                prd_lj.idprodutoloja,
+                                    gpv.idgrupovenda,
+                                    gpv.quantidade_vendido
+                                from
+                                    grupo_venda gpv
+                                left outer join
+                                    produtos_loja prd_lj on gpv.idprodutoloja = prd_lj.idprodutoloja
+                                left outer join
+                                    produto prd on prd_lj.idproduto = prd.idproduto
+                                left outer join
+                                    marca mc on prd.idmarca = mc.idmarca
+                                left outer join
+                                    tamanho tm on prd.idtamanho = tm.idtamanho
+                                left outer join
+                                    categoria ct on prd.idcategoria = ct.idcategoria
+                                where
+                                    prd_lj.idloja = @idloja";
+
+                    var listagemVendaLoja = await dbConnection.QueryAsync(sql, new { Idloja = idloja });
+
+                    if (listagemVendaLoja != null)
+                        return Results.Ok(listagemVendaLoja);
+
+                    return Results.NotFound();
+                }
+            });
+
         }
     }
 }

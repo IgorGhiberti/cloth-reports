@@ -34,3 +34,39 @@ D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\ref\RelatorioRoupas.dll
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.sourcelink.json
 D:\Projetos\Relatorios-Loja-Cida\RelatorioRoupas\RelatorioRoupas\obj\Debug\net7.0\Relatori.47B27ACB.Up2Date
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\appsettings.Development.json
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\appsettings.json
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\RelatorioRoupas.exe
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\RelatorioRoupas.deps.json
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\RelatorioRoupas.runtimeconfig.json
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\RelatorioRoupas.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\RelatorioRoupas.pdb
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\Dapper.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\Npgsql.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.csproj.AssemblyReference.cache
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.AssemblyInfoInputs.cache
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.AssemblyInfo.cs
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.csproj.CoreCompileInputs.cache
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.MvcApplicationPartsAssemblyInfo.cs
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.MvcApplicationPartsAssemblyInfo.cache
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.sourcelink.json
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\staticwebassets.build.json
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\staticwebassets.development.json
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\staticwebassets\msbuild.RelatorioRoupas.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\staticwebassets\msbuild.build.RelatorioRoupas.props
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.RelatorioRoupas.props
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.RelatorioRoupas.props
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\scopedcss\bundle\RelatorioRoupas.styles.css
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\Relatori.47B27ACB.Up2Date
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\refint\RelatorioRoupas.dll
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.pdb
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\RelatorioRoupas.genruntimeconfig.cache
+C:\Dev Projects\Cloth-reports\cloth-reports\RelatorioRoupas\obj\Debug\net7.0\ref\RelatorioRoupas.dll

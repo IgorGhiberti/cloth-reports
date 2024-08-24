@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RelatorioRoupas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbfc716fd86e08450dbb4bf5a12cc27ecb680626")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01796bd02d4699834a248752b54e3c485cf40a81")]
 [assembly: System.Reflection.AssemblyProductAttribute("RelatorioRoupas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RelatorioRoupas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
