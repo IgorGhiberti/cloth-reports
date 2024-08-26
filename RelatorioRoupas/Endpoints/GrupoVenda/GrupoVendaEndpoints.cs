@@ -194,7 +194,7 @@ namespace RelatorioRoupas.Endpoints.GrupoVenda
 
                     var listagemVendaLoja = await dbConnection.QueryAsync(sql, new { Idloja = idloja });
 
-                    if (listagemVendaLoja != null)
+                    if (listagemVendaLoja.Count() > 0)
                         return Results.Ok(listagemVendaLoja);
 
                     return Results.NotFound();

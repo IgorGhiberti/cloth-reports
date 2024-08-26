@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Dev Projects\\Cloth-reports\\cloth-reports\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|c:\\dev projects\\cloth-reports\\cloth-reports\\relatorioroupas\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|solutionrelative:relatorioroupas\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|c:\\dev projects\\cloth-reports\\cloth-reports\\relatorioroupas\\endpoints\\grupovenda\\grupovendaendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|solutionrelative:relatorioroupas\\endpoints\\grupovenda\\grupovendaendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|c:\\dev projects\\cloth-reports\\cloth-reports\\relatorioroupas\\endpoints\\produtosloja\\produtolojaendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF0ADD8-40E8-4617-A0BD-4B78ADA01C95}|RelatorioRoupas\\RelatorioRoupas.csproj|solutionrelative:relatorioroupas\\endpoints\\produtosloja\\produtolojaendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,12 +31,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Dev Projects\\Cloth-reports\\cloth-reports\\RelatorioRoupas\\Models\\Produto.cs",
+              "RelativeDocumentMoniker": "RelatorioRoupas\\Models\\Produto.cs",
+              "ToolTip": "C:\\Dev Projects\\Cloth-reports\\cloth-reports\\RelatorioRoupas\\Models\\Produto.cs",
+              "RelativeToolTip": "RelatorioRoupas\\Models\\Produto.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T02:34:16.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProdutoLojaEndpoints.cs",
+              "DocumentMoniker": "C:\\Dev Projects\\Cloth-reports\\cloth-reports\\RelatorioRoupas\\Endpoints\\ProdutosLoja\\ProdutoLojaEndpoints.cs",
+              "RelativeDocumentMoniker": "RelatorioRoupas\\Endpoints\\ProdutosLoja\\ProdutoLojaEndpoints.cs",
+              "ToolTip": "C:\\Dev Projects\\Cloth-reports\\cloth-reports\\RelatorioRoupas\\Endpoints\\ProdutosLoja\\ProdutoLojaEndpoints.cs",
+              "RelativeToolTip": "RelatorioRoupas\\Endpoints\\ProdutosLoja\\ProdutoLojaEndpoints.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T18:28:59.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GrupoVendaEndpoints.cs",
               "DocumentMoniker": "C:\\Dev Projects\\Cloth-reports\\cloth-reports\\RelatorioRoupas\\Endpoints\\GrupoVenda\\GrupoVendaEndpoints.cs",
               "RelativeDocumentMoniker": "RelatorioRoupas\\Endpoints\\GrupoVenda\\GrupoVendaEndpoints.cs",
               "ToolTip": "C:\\Dev Projects\\Cloth-reports\\cloth-reports\\RelatorioRoupas\\Endpoints\\GrupoVenda\\GrupoVendaEndpoints.cs",
               "RelativeToolTip": "RelatorioRoupas\\Endpoints\\GrupoVenda\\GrupoVendaEndpoints.cs",
-              "ViewState": "AQIAAKYAAAAAAAAAAAAswLIAAAA6AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMQAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-23T02:03:07.578Z",
               "EditorCaption": ""

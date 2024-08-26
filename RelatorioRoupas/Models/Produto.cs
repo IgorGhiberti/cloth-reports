@@ -4,7 +4,7 @@
     {
         public int IdProduto { get; init; }
         public string NomeProduto { get; set; }
-        public float ValorUnitario { get; set; }
+        public decimal ValorUnitario { get; set; }
         public string NomeMarca { get; set; }
         public string NomeCategoria { get; set; }
         public string NomeTamanho { get; set; }
