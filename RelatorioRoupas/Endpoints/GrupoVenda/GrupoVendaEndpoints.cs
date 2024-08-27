@@ -14,14 +14,15 @@ namespace RelatorioRoupas.Endpoints.GrupoVenda
             {
                 using (var dbConnection = connection.CreateConnection())
                 {
-                    var sql = @"INSERT INTO GRUPO_VENDA (IDPRODUTOLOJA, QUANTIDADE_VENDIDO, DATA_VENDA) 
-                                VALUES (@IDPRODUTOLOJA, @QUANTIDADE_VENDIDO, @DATA_VENDA)";
+                    var sql = @"INSERT INTO GRUPO_VENDA (IDPRODUTOLOJA, QUANTIDADE_VENDIDO, DATA_VENDA, VALOR_UNITARIO_VENDA) 
+                                VALUES (@IDPRODUTOLOJA, @QUANTIDADE_VENDIDO, @DATA_VENDA, @VALOR_UNITARIO_VENDA)";
 
                     var novoGpVenda = new
                     {
                         IdProdutoLoja = request.idprodutoloja,
                         Quantidade_Vendido = request.quantidade_vendido,
-                        Data_venda = request.data_venda
+                        Data_venda = request.data_venda,
+                        Valor_unitario_venda = request.valor_unitario_venda
                     };
 
                     var executeQuery = await dbConnection.ExecuteAsync(sql, novoGpVenda);
@@ -56,23 +57,26 @@ namespace RelatorioRoupas.Endpoints.GrupoVenda
                 using (var dbConnection = connection.CreateConnection())
                 {
                     var sql = @"SELECT
-	                                PRD.NOME AS PRODUTO,
-	                                PRD.VALOR_UNITARIO AS VALOR_UNITARIO,
-	                                GV.DATA_VENDA AS DATA_VENDA,
-	                                PRD_LJ.IDPRODUTOLOJA,
-	                                LJ.NOME AS LOJA,
-	                                GV.QUANTIDADE_VENDIDO AS QUANTIDADE_VENDIDO,
-	                                GV.IDGRUPOVENDA
+                                    PRD.NOME AS PRODUTO,
+                                    GV.VALOR_UNITARIO_VENDA AS VALOR_UNITARIO_VENDA,
+                                    GV.DATA_VENDA AS DATA_VENDA,
+                                    PRD_LJ.IDPRODUTOLOJA,
+                                    LJ.NOME AS LOJA,
+                                    GV.QUANTIDADE_VENDIDO AS QUANTIDADE_VENDIDO,
+                                    GV.IDGRUPOVENDA,
+                                    SUM(GV.VALOR_UNITARIO_VENDA * GV.QUANTIDADE_VENDIDO) AS TOTAL
                                 FROM 
-	                                GRUPO_VENDA GV
+                                    GRUPO_VENDA GV
                                 LEFT OUTER JOIN
-	                                PRODUTOS_LOJA PRD_LJ ON GV.IDPRODUTOLOJA = PRD_LJ.IDPRODUTOLOJA
+                                    PRODUTOS_LOJA PRD_LJ ON GV.IDPRODUTOLOJA = PRD_LJ.IDPRODUTOLOJA
                                 LEFT OUTER JOIN
-	                                PRODUTO PRD ON PRD_LJ.IDPRODUTO = PRD.IDPRODUTO
+                                    PRODUTO PRD ON PRD_LJ.IDPRODUTO = PRD.IDPRODUTO
                                 LEFT OUTER JOIN
-	                                LOJA LJ ON PRD_LJ.IDLOJA = LJ.IDLOJA
+                                    LOJA LJ ON PRD_LJ.IDLOJA = LJ.IDLOJA
                                 GROUP BY
-	                                PRD.NOME, LJ.NOME, PRD_LJ.IDPRODUTOLOJA, PRD.VALOR_UNITARIO, GV.QUANTIDADE_VENDIDO, GV.IDGRUPOVENDA";
+                                    PRD.NOME, LJ.NOME, PRD_LJ.IDPRODUTOLOJA, GV.VALOR_UNITARIO_VENDA, PRD.VALOR_UNITARIO, GV.QUANTIDADE_VENDIDO, GV.IDGRUPOVENDA
+                                ORDER BY
+                                    PRD.NOME ASC, LJ.NOME ASC;";
 
                     var listagemVendas = await dbConnection.QueryAsync(sql);
 
@@ -138,7 +142,7 @@ namespace RelatorioRoupas.Endpoints.GrupoVenda
                 {
                     var sql = @"SELECT
 	                                PRD.NOME AS PRODUTO,
-	                                PRD.VALOR_UNITARIO AS VALOR_UNITARIO,
+	                                GV.VALOR_UNITARIO_VENDA AS VALOR_UNITARIO_VENDA,
 	                                GV.DATA_VENDA AS DATA_VENDA,
 	                                PRD_LJ.IDPRODUTOLOJA,
 	                                LJ.NOME AS LOJA,
@@ -170,7 +174,7 @@ namespace RelatorioRoupas.Endpoints.GrupoVenda
                 {
                     var sql = @"select
 	                                prd.nome,
-	                                prd.valor_unitario,
+	                                gpv.valor_unitario_venda as VALOR_UNITARIO_VENDA,
 	                                mc.nome as Marca,
 	                                tm.nome as Tamanho,
 	                                ct.nome as Categoria,

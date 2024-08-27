@@ -69,7 +69,8 @@ namespace RelatorioRoupas.Endpoints.ProdutosLoja
                                     tamanho tm on prd.idtamanho = tm.idtamanho
                                 left outer join
                                     categoria ct on prd.idcategoria = ct.idcategoria
-                                where prd_lj.idloja = @idloja";
+                                where prd_lj.idloja = @idloja
+                                order by prd_lj.idprodutoloja";
 
                     var produtosPorLoja = await dbConnection.QueryAsync(sql, new {  IDLOJA = idloja });
 
