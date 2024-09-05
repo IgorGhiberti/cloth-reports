@@ -205,6 +205,31 @@ namespace RelatorioRoupas.Endpoints.GrupoVenda
                 }
             });
 
+            //Agrupa o resultado das vendas por loja
+            gp_vendaEndpoint.MapGet("/vendaPorLoja", async (DbContext connection) =>
+            {
+                using (var dbConnection = connection.CreateConnection())
+                {
+                    var sql = @"SELECT 
+	                                LJ.NOME AS LOJA,
+	                                SUM(GP.QUANTIDADE_VENDIDO * GP.VALOR_UNITARIO_VENDA) AS TOTAL
+                                FROM
+	                                GRUPO_VENDA GP
+                                LEFT OUTER JOIN
+	                                PRODUTOS_LOJA PRD_LJ ON GP.IDPRODUTOLOJA = PRD_LJ.IDPRODUTOLOJA
+                                LEFT OUTER JOIN
+	                                LOJA LJ ON PRD_LJ.IDLOJA = LJ.IDLOJA
+                                GROUP BY LJ.NOME";
+
+                    var listagemReports = await dbConnection.QueryAsync(sql);
+
+                    if(listagemReports.Count() > 0)
+                        return Results.Ok(listagemReports);
+
+                    return Results.NotFound();
+                }
+            });
+
         }
     }
 }
